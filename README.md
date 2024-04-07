@@ -9,7 +9,7 @@ Helm
 Installation
 
 ## Clonez ce dépôt GitHub :
-git clone https://github.com/votre-utilisateur/votre-depot.git (à changer)
+git clone https://github.com/sabrine-achouak/Projet-AutoScaling-et-IaC.git
 
 ## Accédez au répertoire du projet :
 cd votre-depot
