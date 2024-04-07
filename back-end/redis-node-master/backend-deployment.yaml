@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: backend
+  template:
+    metadata:
+      labels:
+        app: backend
+    spec:
+      containers:
+      - name: backend
+        imagePullPolicy: Always
+        image: soalachouak/node-redis:latest
+        ports:
+        - containerPort: 8080 #Port exposé par l'application Node.js
+        env:
+        - name: PORT
+          value: '8080'
+        - name: REDIS_URL
+          value: redis://redis-main.default.svc.cluster.local:6379
+        - name: REDIS_REPLICAS_URL
+          value: redis://redis-replica1.default.svc.cluster.local:6379

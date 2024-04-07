@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend-node-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: frontend-node
+  template:
+    metadata:
+      labels:
+        app: frontend-node
+    spec:
+      containers:
+      - name: frontend-node
+        image: soalachouak/redis-react:latest
+        ports:
+        - containerPort: 3000 #Port exposé par votre application Node.js

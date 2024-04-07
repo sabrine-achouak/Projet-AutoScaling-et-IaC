@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: frontend-node-service
+spec:
+  selector:
+    app: frontend-node
+  ports:
+  - protocol: TCP
+    port: 8080 # Port externe pour accéder au service
+    targetPort: 3000 # Port interne de l'application Node.js
+  type: LoadBalancer

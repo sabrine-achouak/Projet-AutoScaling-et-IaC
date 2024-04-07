@@ -1,0 +1,11 @@
+FROM node:latest
+
+COPY . .
+
+RUN npm install -g npm@latest
+
+RUN npm cache clean --force
+
+RUN npm install --force
+
+CMD ["node", "main.mjs"]

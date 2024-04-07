@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: redis-main
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: redis-main
+  template:
+    metadata:
+      labels:
+        app: redis-main
+    spec:
+      containers:
+      - name: redis
+        image: redis:latest
+        ports:
+        - containerPort: 6379
+        command: ["redis-server", "--appendonly", "yes"]
+
