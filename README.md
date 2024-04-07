@@ -60,7 +60,7 @@ kubectl expose service grafana --type=NodePort --target-port=3000 --name=grafana
 kubectl get secret --namespace default grafana -o jsonpath="{.data.admin-password}" | base64 –decode ; echo
 
 ## Utilisation
-### Accédez à l'application React via votre navigateur 
+### Accédez à l'application React via votre navigateur :
 minikube service backend-service-ext --url
 ### Accédez à l'application React via votre navigateur :
 minikube service frontend-node-service --url
